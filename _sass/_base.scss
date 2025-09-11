@@ -942,21 +942,22 @@ progress {
   /* Positioning */
   position: fixed;
   left: 0;
-  top: 56px;
-  z-index: 10;
+  top: 0;
+  z-index: 1100; /* 네비게이션바보다 높게 */
 
   /* Dimensions */
   width: 100%;
-  height: 1px;
+  height: 3px;
 
   /* Reset the appearance */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-
+  box-shadow: nonel;
   /* Get rid of the default border in Firefox/Opera. */
   border: none;
-
+  border-radius: 0;
+  overflow: hidden;
   /* Progress bar container for Firefox/IE10  */
   background-color: transparent;
 
@@ -968,12 +969,16 @@ progress::-webkit-progress-bar {
   background-color: transparent;
 }
 
-progress::-webkit-progress-value {
-  background-color: var(--global-theme-color);
-}
+// progress::-webkit-progress-value {
+//   background-color: var(--global-theme-color);
+// }
 
+#progress::-webkit-progress-value {
+  background: #00509d;
+
+}
 progress::-moz-progress-bar {
-  background-color: var(--global-theme-color);
+  background: #00509d;
 }
 
 .progress-container {
@@ -1422,4 +1427,24 @@ figure.cover {
   a.cover-link:hover {
     color: #23212d !important;
   }
+}
+
+
+
+.footer-box {
+  background-color: #00509d; /* 파란색 */
+  color: white;
+  border-radius: 6px;   /* 박스 둥글게 (옵션) */
+  padding: 12px 20px;   /* 안쪽 여백 */
+  margin-top: 2rem;     /* 본문과 간격 */
+  text-align: center;   /* 텍스트 중앙정렬 */
+}
+
+.footer-box a {
+  color: #ffd500; /* 링크 색 노란색 느낌 */
+}
+
+.footer-box a:hover {
+  color: white;
+  text-decoration: underline;
 }
