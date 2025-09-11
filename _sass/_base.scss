@@ -23,6 +23,11 @@ hr {
   border-top: 1px solid var(--global-divider-color);
 }
 
+body {
+  background-color: #ffffff !important; /* 항상 하얀색 배경 */
+  // color: #000000; /* 기본 텍스트 색 검정 */
+}
+
 table {
   td,
   th {
@@ -1448,3 +1453,27 @@ figure.cover {
   color: white;
   text-decoration: underline;
 }
+
+// .navbar,
+// body.dark-mode .navbar,
+// body[data-theme="dark"] .navbar {
+//   background-color: #00509d !important;
+//   color: #fff !important;
+// }
+
+// .navbar .nav-link,
+// .navbar-brand,
+// body.dark-mode .navbar .nav-link,
+// body[data-theme="dark"] .navbar .nav-link,
+// body.dark-mode .navbar-brand,
+// body[data-theme="dark"] .navbar-brand {
+//   color: #fff !important;
+// }
+
+// .btn,
+// body.dark-mode .btn,
+// body[data-theme="dark"] .btn {
+//   background-color: #00509d !important;
+//   color: #fff !important;
+//   border: none;
+// }
