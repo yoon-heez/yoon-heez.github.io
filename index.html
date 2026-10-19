@@ -93,10 +93,11 @@
                 Before joining KAIST, I received my B.S in Life Science from Korea University, where I was particularly fascinated by neuroscience. I remain deeply intrigued by the analogies between the human neurobiological system and artificial intelligence, and I
                 look forward to the synergy they will continue to create.
                 </p>
-                <p>
-                If you have any questions or would like to connect, feel free to reach out via email (<span style="color: #00509d;"><b>hjyoon@kaist.ac.kr</b></span>) or
-                <b><a href="https://www.linkedin.com/in/heeji-%E2%80%8Dyoon-a46714220/" style="color:#00509d;" target="_blank">LinkedIn</a></b>!
-                </p>
+            <div class="profile-links">
+                <a href="https://scholar.google.com/citations?user=uZmjqNMAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" data-tip="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+                <a href="https://www.linkedin.com/in/heeji-%E2%80%8Dyoon-a46714220/" target="_blank" rel="noopener" aria-label="LinkedIn" data-tip="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <button type="button" class="email-copy" data-email="hjyoon@kaist.ac.kr" aria-label="Copy email address" data-tip="hjyoon@kaist.ac.kr"><i class="fa-solid fa-envelope"></i></button>
+            </div>
             </div>
             </div>
             </article>  
@@ -165,6 +166,29 @@
     <div class="publications">
         <ol class="bibliography">
             <li style="margin-top: -10px;">
+            <!-- videomama++ -->
+            <li style="margin-top: 30px;">
+                <div class="row">
+                    <div class="col col-sm-3 abbr">
+                        <figure>
+                            <picture>
+                                <img src="/assets/img/publications/videomamaplpl.png" class="preview z-depth-1 rounded" width="100%" height="auto" alt="videomamaplpl.png" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+                            </picture>
+                        </figure>
+                    </div>
+                    <div id="lim2026videomamapp" class="col-sm-8" style="margin-bottom: 5px;">
+                        <div class="title" style="color: #00509d; font-weight: 500;">VideoMaMa++: Temporally Consistent Video Matting via Preserve-and-Refine Tokens</div>
+                        <div class="author">
+                            Sangbeom Lim, Seoung Wug Oh, <b>Heeji Yoon</b>, Seungryong Kim, Joon-Young Lee
+                        </div>
+                        <div class="links">
+                            <span style="background-color:#fdc500; color:#000; padding:2px 8px; font-size:0.75rem; font-weight:500; border-radius:5px; margin-right:2px; display:inline-block;">NeurIPS 2026</span>
+                            <span style="background-color:#aaa; color:white; padding:2px 8px; font-size:0.75rem; font-weight:400; border-radius:5px; margin-right:2px; display:inline-block; cursor:default;">arXiv</span>
+                            <span style="background-color:#aaa; color:white; padding:2px 8px; font-size:0.75rem; font-weight:400; border-radius:5px; margin-right:2px; display:inline-block; cursor:default;">Project Page</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
             <!-- transferability -->
             <li style="margin-top: 30px;">
                 <div class="row">
@@ -176,14 +200,14 @@
                         </figure>
                     </div>
                     <div id="yoon2026transferability" class="col-sm-8" style="margin-bottom: 5px;">
-                        <div class="title" style="color: #00509d; font-weight: 500;">Transferability Between Understanding and Generation in Unified Multimodal Models</div>
+                        <div class="title" style="color: #00509d; font-weight: 500;"><a href="https://arxiv.org/pdf/2607.04423" target="_blank">Transferability Between Understanding and Generation in Unified Multimodal Models</a></div>
                         <div class="author">
                             Jiwon Kang*, <b>Heeji Yoon*</b>, Jaewoo Jung, Jaewon Min, Minkyeong Jeon, Biyeon Hwang, Sangwon Jung<sup>†</sup>, Seungryong Kim<sup>†</sup>
                         </div>
                         <div class="links">
                             <span style="background-color:#fdc500; color:#000; padding:2px 8px; font-size:0.75rem; font-weight:500; border-radius:5px; margin-right:2px; display:inline-block;">ECCV 2026</span>
-                            <span style="background-color:#aaa; color:white; padding:2px 8px; font-size:0.75rem; font-weight:400; border-radius:5px; margin-right:2px; display:inline-block; cursor:default;">arXiv</span>
-                            <span style="background-color:#aaa; color:white; padding:2px 8px; font-size:0.75rem; font-weight:400; border-radius:5px; margin-right:2px; display:inline-block; cursor:default;">Project Page</span>
+                            <a href="https://arxiv.org/abs/2607.04423" class="paper-btn" target="_blank">arXiv</a>
+                            <a href="https://cvlab-kaist.github.io/UMM_Transferability/" class="paper-btn" target="_blank">Project Page</a>
                         </div>
                     </div>
                 </div>
@@ -540,4 +564,37 @@
     addBackToTop();
 </script>
 <script src="/assets/js/shortcut-key.js"></script>
+<script>
+  // 메일 아이콘 클릭 -> 주소 클립보드 복사
+  document.querySelectorAll(".email-copy").forEach(function (btn) {
+    var email = btn.getAttribute("data-email");
+    var tip = btn.getAttribute("data-tip");
+    function flash() {
+      btn.setAttribute("data-tip", "Copied!");
+      btn.classList.add("copied");
+      setTimeout(function () {
+        btn.classList.remove("copied");
+        btn.setAttribute("data-tip", tip);
+      }, 1400);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = email;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); flash(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+    btn.addEventListener("click", function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(flash, fallback);
+      } else {
+        fallback();
+      }
+    });
+  });
+</script>
 </body></html>
